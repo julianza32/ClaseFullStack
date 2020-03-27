@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*Do while este ciclo se ejecuta como minimo 1 vez asi se cumpla la condicion o no*/
+        /*         let i=0;
+                do{
+                    i++;
+                    document.write(`Numero: ${i}<br>`)
+                } while (i<10); */
+        /*Metodos y funciones
+        Objeto String
+        split-romper una cadena apartir de un determinado caracter
+        length longitud de la cadena
+        splice
+        tolowercase cadena de texto en minuscula
+        touppercase mayusculas
+        join 
+        concat
+        charat
+        trim quitar espacios 
+        repeat
+        str
+        substr extraer una subcadena desde un punto hasta determinado cantidad de caracteres
+        lastIndex ultima posicionn de un caracter especifico
+        lastOf primer posicion de un caracter en especifico
+        */
+        /*   let cadena = prompt("ingrese un texto");
+          document.write(`Longitud de la cadena ${cadena.length} <br>`);
+          document.write(`Mayusculas del texto ${cadena.toLocaleUpperCase()} <br>`);
+          document.write(`Minusculas del texto ${cadena.toLocaleLowerCase()}<br>`);
+          document.write(`Caracter en primera posicion (1) ${cadena.charAt(0)}<br>`);
+          let caracter = prompt("escribe un caracter a buscar");
+          document.write(`<br> Posicion de la letra: ${cadena.indexOf(caracter)}<br>`);
+          document.write(`Posicion de la ultima letra: ${cadena.lastIndexOf(caracter)}<br>`);
+          document.write(cadena.split(``));
+          
+          document.write("<br>Replace: "+cadena.replace(/ /,'-'));
+          document.write("<br>substr: "+cadena.substr(1,5));
+   */        /*Metodos para Arrays
+                                        
+                                        join - concatenar apartir de un simbolo o caracter
+                                        concat - concatenar o unir dos o mas arreglos
+                                        push - concatena un array en la ultima posicion
+                                        splite concatenamos un fragmento del array
+                                        shift eliminar un datos de un array en la posicion 0
+                                        unshift agragar un datos de un array en la posicion 0
+                                        map
+                                        reverse invertir el arreglo
+                                        pop eliminamos el dato de la ultima posicion 
+                                        *//* 
+let alfa1 = ["A","B","C"];
+let alfa2 = ["D","E","F"];
+let grupoA,
+grupoB,
+inverso;
+
+grupoA = alfa1.concat(alfa2);
+document.write(`<br> ${grupoA}`)
+ 
+grupoB=grupoA.join("-");
+document.write(`<br> ${grupoB}`);
+
+grupoA.pop();
+document.write(`<br> ${grupoA}`);
+
+grupoA.push("G");
+document.write(`<br> ${grupoA}`);
+
+grupoA.shift();
+document.write(`<br> ${grupoA}`);
+
+grupoA.unshift("2");
+document.write(`<br> ${grupoA}`);
+ 
+inverso=grupoA.reverse();
+document.write(`<br> ${inverso}`);
+
+grupoA.splice(4,8,"Z","F","T","w","S","A","T","w","S","A","T","w","S","A")
+document.write(`<br> ${inverso}`); */
+
+        let ejercicio;
+        let cantidadDatos;
+
+        //arrayDeCaracteres.sort();
+
+
+        ejercicio = prompt("Ingrese 1) primer ejercicio\nIngrese 2) segundo ejercicio");
+        switch (ejercicio) {
+            case "1":
+                let cantidadDatos = Number(prompt("Ingrese la cantidad de numeros"));
+                let numerosInsert = [cantidadDatos];
+
+                /*   for (let i = 0; i < cantidadDatos; i++) {
+                     do{
+                       numerosInsert[i]=prompt(`Ingrese el numero: ${i+1}`);
+                     }
+                     while(numerosInsert[i]==0)
+                     document.write(`${numerosInsert[i]}<br>`);
+                   }
+*/
+                for (let i = 0; i < cantidadDatos; i++) {
+                    numerosInsert[i] = prompt(`Ingrese el numero: ${i + 1}`);
+                    if (numerosInsert[i] != 0) {
+                        document.write(numerosInsert[i]);
+
+                    }
+                    numerosInsert.shift(i);
+                }
+                break;
+            case "2":
+                let cantidadDatos2 = Number(prompt("Ingrese la cantidad de Caracteres"));
+                let arrayDeCaracteres = [cantidadDatos2];
+                let arrayDeNumeros = [];
+                let arrayAlfa = []
+                let primeraL = "";
+                for (let i = 0; i < cantidadDatos2; i++) {
+                    arrayDeCaracteres[i] = prompt(`Ingrese el numero: ${i + 1}`).charAt(0);
+                    if (isNaN(arrayDeCaracteres[i])) {
+                        arrayDeNumeros.push([arrayDeCaracteres[i]]);
+
+                    } else {
+                        arrayAlfa.push([arrayDeCaracteres[i]]);
+                    }
+
+                }
+                document.write(arrayDeNumeros.sort() + "<br>");
+                document.write(arrayAlfa.sort());
+
+
+                break;
+            default:
+                alert("Ingrese un numero correcto");
+                break;
+        }
+
+    </script>
+</body>
+
+</html>
